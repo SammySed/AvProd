@@ -1,0 +1,37 @@
+﻿@model AvProduto.Models.Produto
+    
+
+@{
+    ViewData["Tilte"] = "Produto";
+}
+
+<h1>Detalhes Aluno</h1>
+<hr/>
+
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <Label asp-for="Nome" class="control-label"></Label>
+            <input asp-for="Nome" class="form-control" readonly />
+            <span asp-validation-for="Nome" class="text-danger"></span>
+         </div>
+
+        <div class="form-group">
+            <Label asp-for="Modelo" class="control-label"></Label>
+            <input asp-for="Modelo" class="form-control" readonly />
+            <span asp-validation-for="Modelo" class="text-danger"></span>
+         </div>
+
+         <div class="form-group">
+            <Label asp-for="categoria" class="control-label"></Label>
+            <input asp-for="categoria" class="form-control" readonly />
+            <span asp-validation-for="categoria" class="text-danger"></span>
+         </div>      
+
+        <div class="form-group" style="margin-top:15px;">
+            <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@Model.ProdutoId">Editar</a>
+            <a class="btn btn-secondary text-white btn-sm" asp-action="Index">Voltar</a>
+        </div>
+    </div>
+</div>

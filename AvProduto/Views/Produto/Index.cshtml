@@ -1,0 +1,49 @@
+﻿@model IEnumerable<AvProduto.Models.Produto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<a class="btn btn-outline-primary" asp-action="Create">Inserir Produto</a>
+
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.categoria)
+            </th>            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.categoria)
+                </td>
+                                <td class="text-center">
+                    <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.ProdutoId">Editar</a>
+
+                    <a class="btn btn-outline-info btn-sm" asp-action="Details" asp-route-id="@item.ProdutoId">Detalhes</a>
+
+                    <a class="btn btn-outline-danger btn-sm" asp-action="Delete" asp-route-id="@item.ProdutoId">Apagar</a>
+                </td>
+            </tr>         
+        }        
+    </tbody>
+</table>
